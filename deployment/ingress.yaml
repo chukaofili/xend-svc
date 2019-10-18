@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: __SERVICE_NAME__
+  name: xend-api-svc
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
   tls:
   - hosts:
-      - __HOSTNAME__
+      - xend-api.microsmart.tk
     secretName: wildcard-certificate-tls
   rules:
-  - host: __HOSTNAME__
+  - host: xend-api.microsmart.tk
     http:
       paths:
       - backend:
-          serviceName: __SERVICE_NAME__
+          serviceName: xend-api-svc
           servicePort: 80

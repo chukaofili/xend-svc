@@ -4,7 +4,7 @@ services:
     build: ./../
     env_file:
       - ./.env.config
-      - ./.env.secrets
+      # - ./.env.secrets
     volumes:
       - "./../app:/www"
     ports:
